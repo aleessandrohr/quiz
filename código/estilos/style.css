@@ -1,26 +1,45 @@
 body {
-    background-color: rgb(216, 51, 51);
+    background-color: #ffc70e;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-    text-align: center;
-    padding: 10px;
-    
+    text-align: center; 
 }
 
-.start {
-    background-color: white;
-    color: rgb(216, 51, 51);
-    width: 500px;
+#criar {
+    padding: 20px;
+}
+
+#start {
+    background-color: #e7e3e0;
+    color: black;
+    width: 200px;
     height: 50px;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: bold;
     cursor: pointer;
     border-radius: 50px;
     border-width: 0;
     outline: 0;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.432);
+}
+
+#info {
+    background-color: #e7e3e0;
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    border-radius: 30px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.432);
+}
+
+#info_info {
+    padding: 7px;
+}
+
+#imagem {
+    text-align: center;
 }
 
 #recarregar {

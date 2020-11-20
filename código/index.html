@@ -10,9 +10,19 @@
 </head>
 <body>
     <header id='header'>
-        <button class='start' id='start' onmouseenter="corentrar('start')" onmouseout="corsair('start')"onclick="criar_corpo()">
-            Começar quiz de conhecimentos gerais
-        </button>
+        <div id='info'>
+            <div id='imagem'>
+                <img src="imagens/pexels-katerina-holmes-5905954.jpg" alt="Conhecimento">
+            </div>
+            <p id='info_info'>
+                Este quiz irá abordar apenas 10 perguntas sobre conhecimento gerais, espero que goste!
+            </p>
+        </div>
+        <div id='criar'>
+            <button id='start' onmouseenter="corentrar('start')" onmouseout="corsair('start')"onclick="criar_corpo()">
+            Iniciar Quiz
+            </button>
+        </div>
     </header>
     <section>
         <div id='corpo'>
@@ -23,10 +33,13 @@
 
             </div>
             <div id='resposta'>
-                
+
             </div>
             <div id='recarregar'>
                 
+            </div>
+            <div id='prosseguir'>
+
             </div>
         </div>
     </section>

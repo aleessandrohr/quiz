@@ -5,25 +5,18 @@ var contador_resposta = -2
 var acertos = 0
 
 function corentrar(param) { 
-    if (param == 'but1' || param == 'but2') {
-        let area = document.getElementById(`${param}`)
-        area.style.background= 'rgba(48, 48, 233, 0.726)'
-    } else {
-        let area = document.getElementById(`${param}`)
-        area.style.background= 'rgba(0, 0, 0, 0.726)'
-    }
+    let area = document.getElementById(`${param}`)
+    area.style.background= 'rgba(0, 0, 0, 0.726)'
 }
 
 function corsair(param) {
-    if (param == 'but1' || param == 'but2') {
+    if (param == 'but1' || param == 'but2' || param == 'butone') {
         let area = document.getElementById(`${param}`)
-        area.style.background= 'rgba(30, 61, 199, 0.397)'
-    } else if (param == 'butone') {
-        let area = document.getElementById(`${param}`)
-        area.style.background= 'rgb(216, 51, 51)'
+        area.style.background= '#151219'
     } else {
         let area = document.getElementById(`${param}`)
-        area.style.background= 'white'
+        area.style.background = '#e7e3e0'
+        area.style.color= 'black'
     }
 }
 
@@ -32,11 +25,12 @@ function reiniciar() {
 }
 
 function criar_corpo() {
-    document.getElementById('start').remove()
+    document.getElementById('header').remove()
     var corpo = document.getElementById('corpo')
-    corpo.style.background = 'white'
+    corpo.style.background = '#e7e3e0'
+    corpo.style.color = 'white'
     corpo.style.width = '600px'
-    corpo.style.height = '600px'
+    corpo.style.height = '420px'
     corpo.style.borderRadius = '20px'
     corpo.style.margin = 'auto'
     corpo.style.boxShadow = '3px 3px 5px rgba(0, 0, 0, 0.432)'
@@ -52,7 +46,7 @@ function criar_índice() {
         var item_índice = document.createElement("button")
         item_índice.innerHTML = `${cont}`
         item_índice.setAttribute('id', `índice${cont}`)
-        item_índice.style.backgroundColor = 'rgba(30, 61, 199, 0.397)'
+        item_índice.style.backgroundColor = '#151219'
         item_índice.style.width = '30px'
         item_índice.style.height = '30px'
         item_índice.style.color = 'white'
@@ -72,6 +66,7 @@ function criar_pergunta() {
     item_pergunta.setAttribute('id', 'item_pergunta')
     item_pergunta.style.fontSize = '20px'
     item_pergunta.style.textAlign = 'center'
+    item_pergunta.style.color = 'black'
     pergunta.style.padding = '50px'
     pergunta.appendChild(item_pergunta)
 }
@@ -83,7 +78,7 @@ function criar_resposta() {
         item_resposta.setAttribute('id', `but${cont}`)   
         item_resposta.setAttribute('onmouseenter', `corentrar('but${cont}')`)  
         item_resposta.setAttribute('onmouseout', `corsair('but${cont}')`)
-        item_resposta.style.backgroundColor = 'rgba(30, 61, 199, 0.397)'
+        item_resposta.style.backgroundColor = '#151219'
         item_resposta.style.width = '130px'
         item_resposta.style.height = '30px'
         item_resposta.style.color = 'white'
@@ -102,13 +97,11 @@ function criar_resposta() {
 
 function iniciar() {
     function acertar() {
-        alert('Você acertou!')
         acertos++
         contagem() 
     }
     
     function errar() {
-        alert('Você errou!')
         contagem()
     }
     
@@ -118,7 +111,8 @@ function iniciar() {
         var but1 = document.getElementById('but1')
         var but2 = document.getElementById('but2')
         if (contador < 10) {
-            índice_trocar.style.backgroundColor = 'rgba(48, 48, 233, 0.726)'
+            índice_trocar.style.backgroundColor = '#d5d5d5'
+            índice_trocar.style.color = 'black'
             contador_resposta += 2
             item_pergunta.innerHTML = pergunta_lista[contador]
             but1.innerHTML = `${resposta_lista[contador_resposta]}`
@@ -169,7 +163,7 @@ function iniciar() {
             item_recarregar.setAttribute('onmouseenter', `corentrar('butone')`)  
             item_recarregar.setAttribute('onmouseout', `corsair('butone')`)
             item_recarregar.innerHTML = 'Reiniciar'
-            item_recarregar.style.backgroundColor = 'rgb(216, 51, 51)'
+            item_recarregar.style.backgroundColor = '#151219'
             item_recarregar.style.width = '130px'
             item_recarregar.style.height = '30px'
             item_recarregar.style.color = 'white'

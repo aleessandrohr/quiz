@@ -98,21 +98,26 @@ function criar_resposta() {
 function iniciar() {
     function acertar() {
         acertos++
+        if (contador < 10) {
+            var índice_trocar = document.getElementById(`índice${contador}`)
+            índice_trocar.style.backgroundColor = 'green'
+        }
         contagem() 
     }
     
     function errar() {
+        if (contador < 10) {
+            var índice_trocar = document.getElementById(`índice${contador}`)
+            índice_trocar.style.backgroundColor = 'red'
+        }
         contagem()
     }
     
     function contagem() {
-        var índice_trocar = document.getElementById(`índice${contador+1}`)
         var item_pergunta = document.getElementById('item_pergunta')
         var but1 = document.getElementById('but1')
         var but2 = document.getElementById('but2')
         if (contador < 10) {
-            índice_trocar.style.backgroundColor = '#d5d5d5'
-            índice_trocar.style.color = 'black'
             contador_resposta += 2
             item_pergunta.innerHTML = pergunta_lista[contador]
             but1.innerHTML = `${resposta_lista[contador_resposta]}`

@@ -10,14 +10,8 @@ function corentrar(param) {
 }
 
 function corsair(param) {
-    if (param == 'but1' || param == 'but2' || param == 'butone') {
-        let area = document.getElementById(`${param}`)
-        area.style.background= '#151219'
-    } else {
-        let area = document.getElementById(`${param}`)
-        area.style.background = '#e7e3e0'
-        area.style.color= 'black'
-    }
+    let area = document.getElementById(`${param}`)
+    area.style.background= '#151219'
 }
 
 function reiniciar() {
@@ -55,6 +49,7 @@ function criar_índice() {
         item_índice.style.borderWidth = '0'
         item_índice.style.fontWeight = 'bold'
         item_índice.style.margin = '15px'
+        item_índice.style.boxShadow = '3px 3px 5px rgba(0, 0, 0, 0.432)'
         item_índice.style.outline = '0'
         índice.appendChild(item_índice)
     }
@@ -88,6 +83,7 @@ function criar_resposta() {
         item_resposta.style.fontWeight = 'bold'
         item_resposta.style.outline = '0'
         item_resposta.style.margin = '15px'
+        item_resposta.style.boxShadow = '3px 3px 5px rgba(0, 0, 0, 0.432)'
         resposta.style.padding = '50px'
         resposta.style.textAlign = 'center'
         resposta.appendChild(item_resposta)

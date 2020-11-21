@@ -1,3 +1,21 @@
+var show = 0
+
+function menuShow() {
+    let menu = document.getElementById('menu')
+    if (show == 0) {
+        menu.style.transition = '1s'
+        menu.style.opacity = '1'
+        menu.style.height = '50px'
+        show++
+    } else {
+        let menu = document.getElementById('menu')
+        menu.style.transition = '1s'
+        menu.style.opacity = '0'
+        menu.style.height = '0'
+        show--
+    }
+}
+
 var pergunta_lista = ['Qual é o tipo de célula que não apresenta núcleo?', 'De onde é a invenção do chuveiro elétrico?', 'Quantas casas decimais tem o número pi?', 'Atualmente, quantos elementos químicos a tabela periódica possui?', 'O que a palavra legend significa em português?', 'Qual a religião monoteísta que conta com o maior número de adeptos no mundo?', 'As pessoas de qual tipo sanguíneo são consideradas doadores universais?', 'Como se chamam os vasos que transportam sangue do coração para a periferia do corpo?', 'Qual o metal cujo símbolo químico é o Au?', 'Quem viveu, segundo a bíblia, 969 anos?']
 var resposta_lista = ['Eucarionte', 'Procarionte', 'Brasil', 'Inglaterra', 'Infinitas', 'Duas', '113', '118', 'Legenda', 'Lenda', 'Judaísmo', 'Cristianismo', 'Tipo O', 'Tipo ABO', 'Artérias', 'Veias', 'Mercúrio', 'Ouro', 'Matusalém', 'Noé']
 var contador = 0
@@ -15,11 +33,19 @@ function corsair(param) {
 }
 
 function reiniciar() {
-    document.location.reload()
+    contador = 0
+    contador_resposta = -2
+    acertos = 0
+    document.getElementById('butone').remove()
+    criar_corpo()
+}
+
+function criar() {
+    document.getElementById('info').remove()
+    criar_corpo()
 }
 
 function criar_corpo() {
-    document.getElementById('header').remove()
     var corpo = document.getElementById('corpo')
     corpo.style.background = '#e7e3e0'
     corpo.style.color = 'white'
@@ -180,4 +206,8 @@ function iniciar() {
         contador++
     }
     contagem()
+}
+
+function mudarBody(cor) {
+    document.getElementById('body').style.backgroundColor = cor
 }

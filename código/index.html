@@ -4,27 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilos/style.css">
-    <script src="scripts/script.js"></script>
+    <script src="javascript/all.min.js"></script>
+    <script src="javascript/script.js"></script>
 </head>
-<body id='principal'>
-    <header id='header'>
-        <div id='info'>
-            <div id='imagem'>
-                <img src="imagens/pexels-katerina-holmes-5905954.jpg" alt="Conhecimento">
-            </div>
-            <p id='info_info'>
-                Este quiz irá abordar apenas 10 perguntas sobre conhecimento gerais, espero que goste!
-            </p>
+<body id='body'>
+    <header>
+        <div id='menuicon' >
+            <i class="fas fa-cog" id='icon' onclick='menuShow()'></i>            
         </div>
-        <div id='criar'>
-            <button id='start' onclick="criar_corpo()">
-            Iniciar Quiz
-            </button>
+        <div id='menu'>
+            <p>
+                <input type="color" name="corbody" id="corbody" onchange="mudarBody(this.value)">
+            </p>
         </div>
     </header>
     <section>
+        <div id='info'>
+            <div id='info-img'>
+                <img src="imagens/pexels-katerina-holmes-5905954.jpg" alt="Conhecimento">
+            </div>
+            <p id='info-msg'>
+                Este quiz irá abordar apenas 10 perguntas sobre conhecimento gerais, espero que goste!
+            </p>
+            <div id='iniciar'>
+                <button id='start' onclick="criar()">
+                    <i class="fas fa-play"></i>
+                </button>
+            </div>
+        </div>
         <div id='corpo'>
             <div id='índice'>
                 
@@ -38,7 +46,7 @@
             <div id='recarregar'>
                 
             </div>
-        </div>
+        </div>    
     </section>
 </body>
 </html>
